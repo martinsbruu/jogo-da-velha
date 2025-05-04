@@ -10,28 +10,38 @@
     <div class="container">
         <h1>Jogo da Velha</h1>
 
-        <div class="controls">
-            <label for="mode">Modo de Jogo:</label>
-            <select id="mode" onchange="resetGame()">
+        <!-- Menu para escolher modo de jogo: 1 jogador (vs bot) ou 2 jogadores -->
+        <div class="mode-select">
+            <label for="mode">Modo de jogo:</label>
+            <select id="mode">
                 <option value="1">1 Jogador (vs Bot)</option>
                 <option value="2">2 Jogadores</option>
             </select>
         </div>
 
+        <!-- Exibição de quem está jogando -->
+        <p id="current-player">Vez de: X</p>
+
+        <!-- Tabuleiro do jogo: 3x3 células -->
         <div class="board">
-            <!-- Cada célula com tabindex e eventos para teclado -->
-            <div class="cell" tabindex="0" onkeydown="handleKey(event, 0, 0)" onclick="makeMove(0, 0)"></div>
-            <div class="cell" tabindex="0" onkeydown="handleKey(event, 0, 1)" onclick="makeMove(0, 1)"></div>
-            <div class="cell" tabindex="0" onkeydown="handleKey(event, 0, 2)" onclick="makeMove(0, 2)"></div>
-            <div class="cell" tabindex="0" onkeydown="handleKey(event, 1, 0)" onclick="makeMove(1, 0)"></div>
-            <div class="cell" tabindex="0" onkeydown="handleKey(event, 1, 1)" onclick="makeMove(1, 1)"></div>
-            <div class="cell" tabindex="0" onkeydown="handleKey(event, 1, 2)" onclick="makeMove(1, 2)"></div>
-            <div class="cell" tabindex="0" onkeydown="handleKey(event, 2, 0)" onclick="makeMove(2, 0)"></div>
-            <div class="cell" tabindex="0" onkeydown="handleKey(event, 2, 1)" onclick="makeMove(2, 1)"></div>
-            <div class="cell" tabindex="0" onkeydown="handleKey(event, 2, 2)" onclick="makeMove(2, 2)"></div>
+            <div class="row">
+                <div class="cell" tabindex="0" onclick="makeMove(0, 0)" onkeydown="handleKey(event, 0, 0)"></div>
+                <div class="cell" tabindex="0" onclick="makeMove(0, 1)" onkeydown="handleKey(event, 0, 1)"></div>
+                <div class="cell" tabindex="0" onclick="makeMove(0, 2)" onkeydown="handleKey(event, 0, 2)"></div>
+            </div>
+            <div class="row">
+                <div class="cell" tabindex="0" onclick="makeMove(1, 0)" onkeydown="handleKey(event, 1, 0)"></div>
+                <div class="cell" tabindex="0" onclick="makeMove(1, 1)" onkeydown="handleKey(event, 1, 1)"></div>
+                <div class="cell" tabindex="0" onclick="makeMove(1, 2)" onkeydown="handleKey(event, 1, 2)"></div>
+            </div>
+            <div class="row">
+                <div class="cell" tabindex="0" onclick="makeMove(2, 0)" onkeydown="handleKey(event, 2, 0)"></div>
+                <div class="cell" tabindex="0" onclick="makeMove(2, 1)" onkeydown="handleKey(event, 2, 1)"></div>
+                <div class="cell" tabindex="0" onclick="makeMove(2, 2)" onkeydown="handleKey(event, 2, 2)"></div>
+            </div>
         </div>
 
-        <p id="current-player">Vez de: X</p>
+        <!-- Botão para reiniciar o jogo -->
         <button onclick="resetGame()">Reiniciar Jogo</button>
     </div>
 
