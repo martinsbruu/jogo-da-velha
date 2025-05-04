@@ -1,9 +1,11 @@
+/* Reset básico: remove margens e preenchimentos padrão e usa box-sizing mais intuitivo */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* Corpo da página: centraliza todo o conteúdo na tela */
 body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f9;
@@ -13,14 +15,17 @@ body {
     height: 100vh;
 }
 
+/* Container centralizado com alinhamento de texto */
 .container {
     text-align: center;
 }
 
+/* Título do jogo */
 h1 {
     margin-bottom: 20px;
 }
 
+/* Tabuleiro do jogo, grid 3x3 com espaçamento entre as células */
 .board {
     display: grid;
     grid-template-rows: repeat(3, 100px);
@@ -30,6 +35,7 @@ h1 {
     margin-bottom: 20px;
 }
 
+/* Célula individual do tabuleiro */
 .cell {
     width: 100px;
     height: 100px;
@@ -43,15 +49,18 @@ h1 {
     outline: none;
 }
 
+/* Quando a célula está focada (por teclado), destaque verde */
 .cell:focus {
     border-color: #4CAF50;
     background-color: #e6ffe6;
 }
 
+/* Efeito ao passar o mouse por cima da célula */
 .cell:hover {
     background-color: #f0f0f0;
 }
 
+/* Botão de reiniciar */
 button {
     padding: 10px 20px;
     background-color: #4CAF50;
@@ -61,14 +70,17 @@ button {
     cursor: pointer;
 }
 
+/* Efeito hover no botão */
 button:hover {
     background-color: #45a049;
 }
 
+/* Espaçamento inferior para controles (modo de jogo, etc) */
 .controls {
     margin-bottom: 15px;
 }
 
+/* Indicador de quem está jogando */
 #current-player {
     margin-bottom: 15px;
     font-weight: bold;
