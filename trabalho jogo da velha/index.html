@@ -9,23 +9,29 @@
 <body>
     <div class="container">
         <h1>Jogo da Velha</h1>
-        <div class="board">
-            <div class="row">
-                <div class="cell" onclick="makeMove(0, 0)"></div>
-                <div class="cell" onclick="makeMove(0, 1)"></div>
-                <div class="cell" onclick="makeMove(0, 2)"></div>
-            </div>
-            <div class="row">
-                <div class="cell" onclick="makeMove(1, 0)"></div>
-                <div class="cell" onclick="makeMove(1, 1)"></div>
-                <div class="cell" onclick="makeMove(1, 2)"></div>
-            </div>
-            <div class="row">
-                <div class="cell" onclick="makeMove(2, 0)"></div>
-                <div class="cell" onclick="makeMove(2, 1)"></div>
-                <div class="cell" onclick="makeMove(2, 2)"></div>
-            </div>
+
+        <div class="controls">
+            <label for="mode">Modo de Jogo:</label>
+            <select id="mode" onchange="resetGame()">
+                <option value="1">1 Jogador (vs Bot)</option>
+                <option value="2">2 Jogadores</option>
+            </select>
         </div>
+
+        <div class="board">
+            <!-- Cada célula com tabindex e eventos para teclado -->
+            <div class="cell" tabindex="0" onkeydown="handleKey(event, 0, 0)" onclick="makeMove(0, 0)"></div>
+            <div class="cell" tabindex="0" onkeydown="handleKey(event, 0, 1)" onclick="makeMove(0, 1)"></div>
+            <div class="cell" tabindex="0" onkeydown="handleKey(event, 0, 2)" onclick="makeMove(0, 2)"></div>
+            <div class="cell" tabindex="0" onkeydown="handleKey(event, 1, 0)" onclick="makeMove(1, 0)"></div>
+            <div class="cell" tabindex="0" onkeydown="handleKey(event, 1, 1)" onclick="makeMove(1, 1)"></div>
+            <div class="cell" tabindex="0" onkeydown="handleKey(event, 1, 2)" onclick="makeMove(1, 2)"></div>
+            <div class="cell" tabindex="0" onkeydown="handleKey(event, 2, 0)" onclick="makeMove(2, 0)"></div>
+            <div class="cell" tabindex="0" onkeydown="handleKey(event, 2, 1)" onclick="makeMove(2, 1)"></div>
+            <div class="cell" tabindex="0" onkeydown="handleKey(event, 2, 2)" onclick="makeMove(2, 2)"></div>
+        </div>
+
+        <p id="current-player">Vez de: X</p>
         <button onclick="resetGame()">Reiniciar Jogo</button>
     </div>
 
