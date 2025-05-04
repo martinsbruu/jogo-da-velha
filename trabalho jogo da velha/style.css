@@ -40,6 +40,12 @@ h1 {
     font-size: 2rem;
     cursor: pointer;
     border: 2px solid #ccc;
+    outline: none;
+}
+
+.cell:focus {
+    border-color: #4CAF50;
+    background-color: #e6ffe6;
 }
 
 .cell:hover {
@@ -57,4 +63,13 @@ button {
 
 button:hover {
     background-color: #45a049;
+}
+
+.controls {
+    margin-bottom: 15px;
+}
+
+#current-player {
+    margin-bottom: 15px;
+    font-weight: bold;
 }
